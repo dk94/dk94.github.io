@@ -1,0 +1,241 @@
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    body { font-size: 1em; }
+    h1{font-size: 1.2em;}
+    h2{font-size: 2em;}
+    h4{font-size: 1.5em;}
+    span{font-size: 1em;}
+    #mainImage span{font-size: 0.5em;}
+    #mainImage button{padding:0;}
+    #mainImage .outerBlock{left:25%;top:25%;}
+    header .mainMenu a{
+        padding: 5px!important;
+    }
+    header .mainMenu a:focus{border:none!important;}
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    #mainImage .outerBlock{left:30%;top:30%;}
+    header .mainMenu a{
+        padding: 10px!important;
+    }
+    header .mainMenu a:focus{border:none!important;}
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    #services .customBOuter span{font-size: small;}
+}
+body{
+    overflow-x: hidden;
+}
+header .mainMenu a{
+    font-size:0.75em;
+
+    padding-bottom:20px;
+    padding-top:20px;
+
+    cursor: pointer;
+}
+header .mainMenu a:focus{
+    border-bottom:2px solid #00e1ff;
+
+}
+header{min-height:50px;}
+header .mainMenu{
+    margin-right:20%;
+
+}
+header .logo{
+    margin-left:20%;
+}
+header>nav{
+    padding-bottom: 2px!important;
+}
+#mainImage{
+    padding:0;
+    position:relative;
+
+}
+.wraper{
+    padding:0;
+
+}
+.outerBlock{
+    position:absolute;
+    top:35%;
+    left:35%;
+    color:#f6f6f6;
+}
+
+.customBtn{
+    background-color: transparent;
+    border:1px solid #f6f6f6;
+    color:#f6f6f6;
+    padding:3%;
+    width:auto;
+}
+
+section{
+    padding:30px 0 30px 0;
+}
+#services{
+    margin-top:60px;
+}
+
+.customDiv{
+    width:97.5%;
+    margin:0 auto;
+
+}
+
+.bottomRow{
+    background-color:#f7f7f7;
+    padding-top:40px;
+}
+
+
+.customBOuter:after {
+    border-bottom: 1px solid #00e1ff;
+    content: '';
+    display: block;
+    width: 39.3%;
+    margin:0 auto;
+    margin-top:-1px;
+
+}
+#services .customBtn{
+    width:100%;
+    border:1px solid #c8cdce;
+    color:black;
+
+}
+
+.helper{height: 41px;
+    border: 1px solid #00e1ff;
+    border-bottom: 5px solid white;
+    border-top: none;
+    width: 52%;
+
+    margin-left: -2px;
+}
+
+.rightB{
+    border-right:1px solid #00e1ff;
+}
+
+.leftB{
+    border-left:1px solid #00e1ff;
+}
+
+.frRow{
+    margin-top:20px;
+    padding-bottom:35px;
+}
+#services .frRow button{
+    width:40%;
+    border:1px solid #00e1ff;
+    color:#00e1ff;
+}
+hr{
+   background-color:#00e1ff;
+    width:20%;
+}
+#portfolio{
+    padding-bottom:0;
+}
+#portfolio .customBtn{
+    color:black;
+}
+#portfolio .transBlock{
+    position:absolute;
+    width:100%;height:100%;
+
+    background-color:rgba(10,163,181,0.5);
+    top:0;left:0;
+    text-align: center;
+}
+#portfolio .buttonsR{
+    margin:25px auto;
+
+}
+
+#portfolio .transBlock span{
+    position:relative;
+    top:50%;
+    font-weight: 900;
+    opacity:1;
+    color: white;
+}
+#statistic{
+    background-color:#131316;
+    color:white;
+    padding:50px 0 50px 0;
+}
+#statistic .statItem span{
+    font-size: x-small;
+}
+#aboutUs .person{
+    background-color:#f7f7f7;
+}
+#aboutUs .nameBlock{
+    position:absolute;
+    color:white;
+    bottom:0;
+    background-color:#1c1d1e;
+    width:100%;
+    text-align: center;
+
+}
+#aboutUs .social{
+    float:left;
+    width:25%;
+}
+#news .desc{
+    border-top:1px solid #00e1ff;
+    border-bottom:1px solid #00e1ff;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+#news button{padding:5px; border:1px solid #00e1ff; color:black;}
+#contactUs{
+    background-color: #131316;
+    color:white;
+}
+
+#contactUs input{width:100%; background-color: transparent; color:white; padding:10px;
+    border:none; border-bottom: 1px solid white;outline:none;margin-top:20px;}
+#contactUs button{
+    float:right; border-color: #00e1ff;margin-top:20px;padding:10px;
+}
+#contactUs .row div{margin-bottom: 20px;}
+#contactUs .warning{color:red;font-weight: bold;}
+header .menu{background-color:white;}
+
+#footer{background-color: #252726; padding-bottom:0;}
+
+#footer .colorBlock{background-color:#07bcd4; color:white;padding:20px;}
+
+
+#footer .colorBlock:after {
+    content: '';
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border: 15px solid transparent;
+    border-top-color: #07bcd4;
+
+    top: 100%;
+    left: 50%;
+    margin-left: -15px; /* adjust for border width */
+}
+
+#footer .topRow{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.bottomRowS{background-color:#131316;padding:20px;}
+.bottomRowS>div{margin-left:70px;}

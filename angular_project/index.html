@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-scroll-spy.js"></script>
+    <script src="libs/countUp.js"></script>
+    <script src="libs/angular-countUp.js"></script>
+    <script src="libs/angular_route.js"></script>
+    <script src="libs/angular-smooth-scroll.js"></script>
+    <script src="libs/module.js"></script>
+    <script src="libs/directives.js"></script>
+    <script src="libs/filters.js"></script>
+    <script src="libs/controllers.js"></script>
+
+    <link rel="stylesheet" href="styles/main.css">
+
+
+</head>
+<body>
+    <div class="container-fluid wraper">
+        <header id="header" ng-controller="menuCtrl">
+
+            <nav class="navbar navbar-toggleable-md navbar-light fixed-top menu">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand logo" href="#"><img src="img/logo.png" class="img-fluid"></a>
+                <div class="collapse navbar-collapse  justify-content-end mainMenu" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+
+                        <li class="nav-item" ng-repeat="item in items">
+                            <a class="nav-link" href="" ng-click="scroll(item.id)">{{item.name}}</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section id="mainImage" ng-controller="menuCtrl">
+            <img src="img/header_img.png" class="img-fluid">
+            <div class="outerBlock text-center">
+                <h1>WE MAKE WEBSITES</h1>
+                <button class="customBtn" ng-click="startTour()"><span>START TOUR</span></button>
+            </div>
+        </section>
+
+        <section id="services" ng-controller="serviceCtrl">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-md-6  col-lg-3 text-center" ng-repeat="item in data">
+                            <div class="customBOuter">
+                            <img ng-src="{{item.url}}" ng-click="changeValue(item.index)"><br>
+                            <span>{{item.name}}</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row textRow justify-content-center" ng-switch on="value" resize-directive>
+
+
+                            <div class="col-md-8"  ng-if="width >= 992" ng-class="wdphClass" style="height:40px; border-bottom:1px solid #00e1ff;">
+
+                            <div class="row justify-content-center">
+                                <div class="col-3" style="padding:0;"><div class="helper"  ng-show="gd"></div></div>
+                                <div class="col-3" style="padding:0;" ><div  class="helper" ng-show="pr" style="float: right;margin-right:-2px; "></div></div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-8"  ng-if="width < 992" style="height:40px; border-bottom:1px solid #00e1ff;">
+                        </div>
+                        <div class="col-12 col-md-8" ng-switch-when="1">
+
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatatnon proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                        </div>
+
+                        <div class="col-12 col-md-8" ng-switch-when="2">
+
+                            <span>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatatnon proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+
+                        </div>
+                        <div class="col-12 col-md-8" ng-switch-when="3">
+
+                            <span>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatatnon proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+
+                        </div>
+                        <div class="col-12 col-md-8" ng-switch-when="4">
+
+                            <span>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatatnon proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottomRow justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-10 col-md-6">
+                            <button class="customBtn" >START TOUR</button>
+                        </div>
+                        <div class="col-10 col-md-6">
+                            <button class="customBtn" style="border: 1px solid #00e1ff;">FOR ALL DEVICES</button>
+                        </div>
+                    </div>
+                    <div class="row frRow justify-content-center">
+                        <div class="col-10 col-md-6">
+                            <img src="img/services_img5.png" class="img-fluid">
+                        </div>
+                        <div class="col-10 col-md-6" style="margin-top:30px;">
+                            <h2>Fully Responsive</h2>
+                            <span>Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.
+Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</span>
+                            <br><br>
+                            <button class="customBtn" ng-click="getNow()">GET NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" ng-controller="portfolioCtrl">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="row text-center">
+                        <div class="col-12">
+                        <h2>Our Portfolio</h2>
+                        <hr>
+                            <span>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</span>
+                    </div>
+                    </div>
+                    <div class="row text-center justify-content-center buttonsR">
+                        <div class="col-10 col-md-3" ng-repeat="button in buttons">
+                           <button class="customBtn" ng-click="chooseCat(button)">{{button}}</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row no-gutters justify-content-center">
+                <div class="col-12 col-md-4 col-lg-2" ng-repeat="item in items|portfolioFilter:currentCat">
+                    <img ng-src="{{item.url}}" class="img-fluid" ng-mouseenter="onImg(item.index)">
+                    <div class="transBlock" ng-show="item.flag" ng-mouseleave="outDiv(item.index)"><span>{{item.category}}</span></div>
+                </div>
+            </div>
+        </section>
+        <section id="statistic" ng-controller="statisticCtrl" >
+        <div class="row justify-content-center">
+            <div class="col-10 col-lg-8">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3 text-center statItem" ng-repeat="item in statItems">
+                        <img ng-src="{{item.url}}"><br><br>
+                        <h2 count-up id="numberAnimation" end-val="item.number" duration="3" scroll-spy-event="elementFirstScrolledIntoView" scroll-spy></h2>
+                        <span>{{item.text}}</span>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <section id="aboutUs" ng-controller="aboutUs">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <h2>We are the one</h2>
+                            <hr>
+                            <span>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-8">
+                    <div class="row text-center" gen-cont-directive></div>
+                </div>
+            </div>
+        </section>
+        <section id="news" ng-controller="newsCtrl">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <h2>Check Our news</h2>
+                            <hr>
+                            <span>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</span>
+                        </div>
+                    </div>
+                    <div style="margin:40px auto;" ng-view>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contactUs" ng-controller="contactUsCtrl">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <h2>Contact Us</h2>
+                            <hr>
+                            <span>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</span>
+                        </div>
+                    </div>
+                    <form name="myForm">
+                    <div class="row text-center justify-content-center" >
+
+                        <div class="col-10 col-md-6">
+                            <input type="text" name="name" placeholder="Your name here"  ng-model="name" ng-pattern="patName">
+                            <span class="warning" ng-show="myForm.name.$invalid&&myForm.name.$dirty">Invalid field. Only english letters allowed</span>
+                        </div>
+                        <div class="col-10 col-md-6">
+                            <input type="email" name="email" placeholder="Your mail here" ng-model="email" ng-pattern="patMail">
+                            <span class="warning" ng-show="myForm.email.$invalid&&myForm.email.$dirty">Invalid field.</span>
+
+                        </div>
+
+                        <div class="col-10 col-md-12">
+                            <input type="text" name="msg" placeholder="Your message here"  ng-model="msg" ng-pattern="patMsg">
+                            <span class="warning" ng-show="myForm.msg.$invalid&&myForm.msg.$dirty">Invalid field. Min 20 symbols.</span>
+                            <button class="customBtn">Send message</button>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="footer" ng-controller="footerCtrl">
+            <div class="row justify-content-center topRow">
+                <div class="col-7 col-md-4 col-lg-2 colorBlock text-center">
+                    <span>Our Address:</span><br>
+                    <span>ouraddress@mai.com</span><br>
+                    <span>+380936785432</span>
+                </div>
+
+            </div>
+            <div class="row bottomRowS justify-content-center">
+                <div class="col-10 col-md-4 col-lg-3">
+                    <div ng-click="toTheTop()" style="border-radius:50%; border:1px solid white; height:30px;width:30px; color:white; text-align:center; display:inline-block; cursor:pointer;">&#923;</div>
+                    <span style="font-size: x-small; color:white">2017 - <span style="font-size: x-small; color:#07bcd4; " >xxfcdkxx</span>. All rights reserved</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

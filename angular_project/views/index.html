@@ -1,0 +1,9 @@
+<div class="row justify-content-center" ng-repeat="item in data">
+    <div class="col-4 col-md-2">
+        <h2 style="color:#00e1ff;">{{item.date|convertDateFilter|date:'dd'}}</h2><span>{{item.date|convertDateFilter|date:'MMMM'}}</span>
+    </div>
+    <div class="col-10">
+        <span>{{item.text}}</span><br>
+        <a ng-click="link(item.id)" style="float: right;color:#00e1ff;cursor:pointer">Read more</a>
+    </div>
+</div>
